@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Contatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="visual.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4 app-title">Gerenciador de Contatos</h1>
+        <div class="card form-card shadow">
+            <div class="card-body">
+                <h3 class="text-center mb-3"><i class="fas fa-phone-alt"></i> Adicionar Contato</h3>
+                <form id="phoneForm">
+                    <div class="mb-3">
+                        <label for="contactName" class="form-label">Nome do Contato</label>
+                        <input type="text" class="form-control" id="contactName" placeholder="Digite o nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">Número de Telefone (com DD)</label>
+                        <input 
+                            type="tel" 
+                            class="form-control" 
+                            id="phoneNumber" 
+                            placeholder="Ex: (11) 91234-5678" 
+                            pattern="^\(\d{2}\) \d{4,5}-\d{4}$" 
+                            required>
+                        <div class="form-text">Formato válido: (DD) XXXXX-XXXX</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Salvar Contato</button>
+                </form>
+            </div>
+        </div>
+        <h2 class="mt-5">Lista de Contatos</h2>
+        <table class="table table-hover table-bordered mt-3">
+            <thead class="table-success">
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="phoneTable"></tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="funçoes.js"></script>
+</body>
+</html>
